@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6c9485e5-35b9-4088-889f-1509fba44255/deploy-status)](https://app.netlify.com/sites/labour-hopscotch/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

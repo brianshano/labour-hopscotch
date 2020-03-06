@@ -37,8 +37,15 @@ function About() {
   return (
     <div>
       <p>About Labour Hopscotch</p>
-
-      <Link to="/">Home</Link>
+      <p>
+        Contact&nbsp;
+        <a href="mailto:sinead@labourhopscotch.ie?subject=websitequery">
+          sinead@labourhopscotch.ie
+        </a>
+      </p>
+      <div>
+        <Link to="/">Home</Link>
+      </div>
     </div>
   );
 }

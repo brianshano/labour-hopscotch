@@ -5,13 +5,14 @@
 .App-logo {
   /* min-height: 40vmin; */
   /* max-height: 80vh; */
-  width: 100vw;
+  /* width: 100vw; */
   max-width: 480px;
+  max-height: 80vh;
   pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #4e616f;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +23,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #cfcfcf;
 }
 
 a {
@@ -35,9 +36,9 @@ a:hover {
 }
 
 a:active {
-  color: rgb(8, 5, 211);
+  color: #b9c4bc;
 }
 
 a:visited {
-  color: rgb(207, 207, 207);
+  color: #b9c4bc;
 }
