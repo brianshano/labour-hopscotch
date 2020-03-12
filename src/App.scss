@@ -1,3 +1,7 @@
+body {
+  font-size: 16px;
+}
+
 .App {
   text-align: center;
 }
@@ -41,4 +45,22 @@ a:active {
 
 a:visited {
   color: #b9c4bc;
+}
+
+.about-container {
+  padding: 1rem;
+  max-width: 40rem;
+  text-align: center;
+  font-size: 1rem;
+  @media only screen and (min-device-width: 480px) {
+    font-size: 1.2rem;
+  }
+
+  .about-content {
+    text-align: justify;
+  }
+
+  .about-title {
+    font-weight: bold;
+  }
 }
