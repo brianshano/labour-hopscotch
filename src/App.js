@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import logo from './assets/labour-hopscotch.jpg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -35,9 +35,9 @@ function Home() {
 
 function About() {
   return (
-    <div className="about-content">
-      <p>About Labour Hopscotch</p>
-      <p>
+    <div className="about-container">
+      <p className="about-title">About Labour Hopscotch</p>
+      <p className="about-content">
         The National Maternity hospital is making strides towards evidence based
         care with it’s award winning innovative ‘Labour Hopscotch’ created by a
         forward thinking Midwife Sinead Thompson. Mobility in labour has been
@@ -45,7 +45,7 @@ function About() {
         reduce the need for medication as well as improving mum’s feelings of
         control and satisfaction.
       </p>
-      <p>
+      <p className="about-content">
         Labour Hopscotch – make each step count! A visual birthing tool designed
         to aid you in an active birth. Providing structured guidance by
         outlining 20-minute rotating “steps” to perform during labour. These
