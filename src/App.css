@@ -42,3 +42,8 @@ a:active {
 a:visited {
   color: #b9c4bc;
 }
+
+.about-content {
+  padding: 1rem;
+  max-width: 40rem;
+}
