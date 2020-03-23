@@ -1,13 +1,43 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as HashRouter,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 import logo from './assets/labour-hopscotch.jpg';
+import Steps from './pages/steps.js';
 import './App.scss';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <header className="App-header">
+          <div className="header">
+            <Link to="/">Labour Hopscotch</Link>
+          </div>
+          <div className="nav-top">
+            <div className="nav-top-item">
+              <Link to="/about">About</Link>
+            </div>
+          </div>
+          <div className="nav-steps">
+            <div className="nav-steps-item">
+              <Link to="/steps/alternative-therapy">Alternative Therapy</Link>
+            </div>
+            <div className="nav-steps-item">
+              <Link to="/steps/birthing-ball">Birthing Ball</Link>
+            </div>
+            <div className="nav-steps-item">
+              <Link to="/steps/mat">Mat</Link>
+            </div>
+            <div className="nav-steps-item">
+              <Link to="/steps/water">Water</Link>
+            </div>
+          </div>
+        </header>
+        <div class="app-body">
           <Switch>
             <Route exact path="/">
               <Home />
@@ -15,10 +45,13 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
+            <Route path="/steps/:id">
+              <Steps />
+            </Route>
           </Switch>
-        </header>
+        </div>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
@@ -26,14 +59,11 @@ function Home() {
   return (
     <div>
       <img src={logo} className="App-logo" alt="logo" />
-      <p>Labour Hopscotch</p>
-
-      <Link to="/about">About</Link>
     </div>
   );
 }
 
-function About() {
+const About = () => {
   return (
     <div className="about-container">
       <p className="about-title">About Labour Hopscotch</p>
@@ -63,5 +93,5 @@ function About() {
       </div>
     </div>
   );
-}
+};
 export default App;
