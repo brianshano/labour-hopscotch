@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './steps.scss';
 import stepList from '../steps.json';
 
