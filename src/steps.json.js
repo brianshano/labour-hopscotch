@@ -25,7 +25,7 @@ const obj = {
       idName: 'mat',
       name: 'Mat',
       desc: 'Description of Mat here',
-      actions: ['All Fours', 'Robozo', 'Massage', 'Lunge']
+      actions: ['All Fours', 'Robozo', 'Massage', 'Lunges']
     },
     {
       id: 4,
@@ -33,6 +33,27 @@ const obj = {
       name: 'Water',
       desc: 'Description of the step here',
       actions: ['Squatting', 'Sips of H20', 'Breathing', 'Entonox']
+    },
+    {
+      id: 5,
+      idName: 'stool',
+      name: 'Stool',
+      desc: 'Description of the step here',
+      actions: ['Tens', 'Breathing', 'Sips H20', 'Massage/Heat Pack']
+    },
+    {
+      id: 6,
+      idName: 'toilet',
+      name: 'Toilet',
+      desc: 'Description of the step here',
+      actions: ['Dim Lights', 'Music', 'Pass Urine', 'Counterpressure']
+    },
+    {
+      id: 7,
+      idName: 'mobilise',
+      name: 'Mobilise',
+      desc: 'Description of the step here',
+      actions: ['Sideways on Stairs', 'Lunges', 'Squat', 'Pelvic Tilts']
     }
   ]
 };
