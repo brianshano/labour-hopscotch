@@ -8,11 +8,9 @@ import {
 // import ReactDOM from 'react-dom';
 import logo from './assets/labour-hopscotch.jpg';
 import Steps from './pages/steps.js';
+import About from './pages/about.js';
 import './App.scss';
 import * as contentful from 'contentful';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// import { Carousel } from 'react-responsive-carousel';
-// import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 
@@ -27,7 +25,12 @@ const App = () => {
     });
     client.getEntries().then(entries => {
       console.log('entries:', entries);
-      setEntries(entries.items);
+      setEntries(
+        entries.items.filter(item => {
+          return item.sys.contentType.sys.id === 'hopscotchSteps';
+        })
+      );
+      // const slideEntries = entries.
       entries.items.forEach(entry => {
         if (entry.fields.title) {
           console.log(entry.fields.title);
@@ -39,21 +42,18 @@ const App = () => {
     // slidesPerView: 6,
     spaceBetween: 20,
     slidesPerView: 'auto',
-    centeredSlides: true,
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    //   hide: false
-    // }
-    // spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
+    mousewheel: {
+      invert: true
+    },
+    hashNavigation: {
+      replaceState: true
+    },
+    centeredSlides: true,
+    grabCursor: true
   };
 
   return (
@@ -61,7 +61,12 @@ const App = () => {
       <div className="App">
         <header className="App-header">
           <div className="header">
-            <Link to="/">Labour Hopscotch</Link>
+            <Link to="/">
+              <img
+                src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
+                className="header-logo"
+              />
+            </Link>
           </div>
           <div className="nav-top">
             <div className="nav-top-item">
@@ -70,33 +75,25 @@ const App = () => {
           </div>
           <div className="nav-steps">
             <Swiper {...params}>
-              {entries.map(item => {
+              {entries.map((item, index) => {
                 const linkUrl = '/steps/' + item.fields.urlTitle;
                 return (
-                  <div className="slide">
-                    <Link to={linkUrl}>
+                  <div className="slide" key={index}>
+                    <Link to={linkUrl} className="slide-link">
+                      <img
+                        src={item.fields.icon.fields.file.url}
+                        className="slide-image"
+                      />
                       <div className="nav-steps-item">{item.fields.title}</div>
                     </Link>
                   </div>
                 );
               })}
             </Swiper>
-            {/* <div className="nav-steps-item">
-              <Link to="/steps/alternative-therapy">Alternative Therapy</Link>
-            </div>
-            <div className="nav-steps-item">
-              <Link to="/steps/birthing-ball">Birthing Ball</Link>
-            </div>
-            <div className="nav-steps-item">
-              <Link to="/steps/mat">Mat</Link>
-            </div>
-            <div className="nav-steps-item">
-              <Link to="/steps/water">Water</Link>
-            </div> */}
           </div>
         </header>
-        <div class="carousel-wrapper"></div>
-        <div class="app-body">
+
+        <div className="app-body">
           <Switch>
             <Route exact path="/">
               <Home />
@@ -122,35 +119,4 @@ function Home() {
   );
 }
 
-const About = () => {
-  return (
-    <div className="about-container">
-      <p className="about-title">About Labour Hopscotch</p>
-      <p className="about-content">
-        The National Maternity hospital is making strides towards evidence based
-        care with it’s award winning innovative ‘Labour Hopscotch’ created by a
-        forward thinking Midwife Sinead Thompson. Mobility in labour has been
-        shown in study after study to shorten labour, reduce fetal distress and
-        reduce the need for medication as well as improving mum’s feelings of
-        control and satisfaction.
-      </p>
-      <p className="about-content">
-        Labour Hopscotch – make each step count! A visual birthing tool designed
-        to aid you in an active birth. Providing structured guidance by
-        outlining 20-minute rotating “steps” to perform during labour. These
-        include keeping mobile by walking sideways on a stairs, or sitting on a
-        stool while being massaged.
-      </p>
-      <p>
-        Contact&nbsp;
-        <a href="mailto:sinead@labourhopscotch.ie?subject=websitequery">
-          sinead@labourhopscotch.ie
-        </a>
-      </p>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
-    </div>
-  );
-};
 export default App;
