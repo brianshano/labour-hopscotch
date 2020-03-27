@@ -12,6 +12,7 @@
   max-width: 480px;
   max-height: 80vh;
   pointer-events: none;
+  cursor: 'pointer';
 }
 
 .App-header {
@@ -69,6 +70,9 @@ a:visited {
   .nav-top-item {
     padding: 0.5rem;
     padding-top: 0;
+    a {
+      text-decoration: none;
+    }
   }
 }
 .nav-steps {
@@ -130,7 +134,11 @@ div.slide {
 }
 
 .hopscotch-main-image {
-  div > img {
+  div {
+    margin: 0 auto;
+    // width: 100vw !important;
+  }
+  & > img {
     width: calc(100vw-0.5rem);
     width: 100vw;
     max-width: 1024px;
