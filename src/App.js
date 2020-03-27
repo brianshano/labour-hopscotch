@@ -5,12 +5,18 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+// import ReactDOM from 'react-dom';
 import logo from './assets/labour-hopscotch.jpg';
 import Steps from './pages/steps.js';
 import './App.scss';
 import * as contentful from 'contentful';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// import { Carousel } from 'react-responsive-carousel';
+// import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Swiper from 'react-id-swiper';
+import 'swiper/css/swiper.css';
 
-function App() {
+const App = () => {
   const [entries, setEntries] = useState([]);
   useEffect(() => {
     console.log('ineeeer');
@@ -29,6 +35,27 @@ function App() {
       });
     });
   }, []);
+  const params = {
+    // slidesPerView: 6,
+    spaceBetween: 20,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    //   hide: false
+    // }
+    // spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  };
+
   return (
     <HashRouter>
       <div className="App">
@@ -42,14 +69,18 @@ function App() {
             </div>
           </div>
           <div className="nav-steps">
-            {entries.map(item => {
-              const linkUrl = '/steps/' + item.fields.urlTitle;
-              return (
-                <div className="nav-steps-item">
-                  <Link to={linkUrl}>{item.fields.title}</Link>
-                </div>
-              );
-            })}
+            <Swiper {...params}>
+              {entries.map(item => {
+                const linkUrl = '/steps/' + item.fields.urlTitle;
+                return (
+                  <div className="slide">
+                    <Link to={linkUrl}>
+                      <div className="nav-steps-item">{item.fields.title}</div>
+                    </Link>
+                  </div>
+                );
+              })}
+            </Swiper>
             {/* <div className="nav-steps-item">
               <Link to="/steps/alternative-therapy">Alternative Therapy</Link>
             </div>
@@ -64,6 +95,7 @@ function App() {
             </div> */}
           </div>
         </header>
+        <div class="carousel-wrapper"></div>
         <div class="app-body">
           <Switch>
             <Route exact path="/">
@@ -80,7 +112,7 @@ function App() {
       </div>
     </HashRouter>
   );
-}
+};
 
 function Home() {
   return (
