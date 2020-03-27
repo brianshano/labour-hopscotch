@@ -39,6 +39,7 @@
 
     .header-logo {
       // border: 1px solid green;
+      width: 90%;
       max-width: 30rem;
     }
   }
@@ -100,7 +101,9 @@ a:visited {
 div.slide {
   border: 4px double white;
   width: 16vw;
+  min-width: 100px;
   height: 16vw;
+  min-height: 100px;
   padding: .5rem;
   margin: .5rem;
   display: flex;
@@ -121,6 +124,8 @@ div.slide {
   .slide-image {
     width: 10vw;
     height: 10vw;
+    min-width: 60px;
+    min-height: 60px;
     // border: 1px solid pink
   }
 }
