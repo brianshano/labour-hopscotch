@@ -3,12 +3,16 @@
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  // align-content: stretch;
   margin: 1rem;
   .action {
     min-width: 10rem;
     border: 1px solid white;
     padding: 1rem;
-    margin: .5rem;
+    margin: 0.5rem;
+  }
+  .action-description {
+    text-align: justify;
+    max-width: 800px;
+    padding: 0 1rem;
   }
 }
