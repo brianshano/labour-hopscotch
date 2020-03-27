@@ -115,8 +115,13 @@ const App = () => {
 
 const Home = () => {
   let history = useHistory();
+  const windowWidth = window.innerWidth;
+  console.log('width', windowWidth);
 
-  const URL = 'https://c1.staticflickr.com/5/4052/4503898393_303cfbc9fd_b.jpg';
+  const URL =
+    'https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_' +
+    windowWidth +
+    '/v1585353002/Labour%20Hopscotch/labour-hopscotch.jpg';
   const MAP = {
     name: 'my-map',
     areas: [
@@ -169,7 +174,7 @@ const Home = () => {
     <div className="hopscotch-main-image">
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <ImageMapper
-        src={logo}
+        src={URL}
         map={MAP}
         className="App-logo"
         alt="logo"
