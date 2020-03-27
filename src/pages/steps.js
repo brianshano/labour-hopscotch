@@ -25,25 +25,6 @@ const Steps = location => {
   let { id } = useParams();
   const steps = stepList.steps;
 
-  const Renderer = id => {
-    console.log('check', id);
-    const output = steps.filter(step => {
-      return id.id === step.idName;
-    });
-    console.log('output', output);
-    return (
-      <div>
-        {/* <ContentfulClient /> */}
-        {/* <h1>{output[0].name}</h1> */}
-        {/* <div>{output[0].desc}</div> */}
-        <div className="actions-container">
-          {/* {output[0].actions.map(action => {
-            return <div className="action">{action}</div>;
-          })} */}
-        </div>
-      </div>
-    );
-  };
   console.log('entries', entries);
 
   return (
@@ -61,7 +42,7 @@ const Steps = location => {
           return (
             <>
               <div className="action">{entry.fields.title}</div>
-              <div>
+              <div className="action-description">
                 {entry.fields.description.content.map(content => {
                   return <p>{content.content[0].value}</p>;
                 })}

@@ -13,6 +13,8 @@ import './App.scss';
 import * as contentful from 'contentful';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
+import ImageMapper from 'react-image-mapper';
+import { useHistory } from 'react-router-dom';
 
 const App = () => {
   const [entries, setEntries] = useState([]);
@@ -74,7 +76,7 @@ const App = () => {
             </div>
           </div>
           <div className="nav-steps">
-            <Swiper {...params}>
+            {/* <Swiper {...params}>
               {entries.map((item, index) => {
                 const linkUrl = '/steps/' + item.fields.urlTitle;
                 return (
@@ -89,7 +91,7 @@ const App = () => {
                   </div>
                 );
               })}
-            </Swiper>
+            </Swiper> */}
           </div>
         </header>
 
@@ -111,12 +113,70 @@ const App = () => {
   );
 };
 
-function Home() {
+const Home = () => {
+  let history = useHistory();
+
+  const URL = 'https://c1.staticflickr.com/5/4052/4503898393_303cfbc9fd_b.jpg';
+  const MAP = {
+    name: 'my-map',
+    areas: [
+      {
+        name: 'alternative-therapies',
+        shape: 'rect',
+        coords: [630, 0, 388, 250]
+      },
+      {
+        name: 'birthing-ball',
+        shape: 'rect',
+        coords: [280, 240, 505, 470]
+      },
+      {
+        name: 'mat',
+        shape: 'rect',
+        coords: [505, 240, 740, 470]
+        // preFillColor: 'green',
+        // fillColor: 'blue'
+      },
+      {
+        name: 'water',
+        shape: 'rect',
+        coords: [390, 680, 620, 455]
+      },
+      {
+        name: 'birthing-stool',
+        shape: 'rect',
+        coords: [505, 890, 270, 670]
+      },
+      {
+        name: 'toilet',
+        shape: 'rect',
+        coords: [730, 890, 505, 670]
+      },
+      {
+        name: 'mobilise',
+        shape: 'rect',
+        coords: [390, 890, 620, 1110]
+      }
+    ]
+  };
+  const clicked = area => {
+    console.log('you clicked', area);
+    console.log('you clicked', area.name);
+    history.push('/steps/' + area.name);
+  };
+
   return (
-    <div>
-      <img src={logo} className="App-logo" alt="logo" />
+    <div className="hopscotch-main-image">
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <ImageMapper
+        src={logo}
+        map={MAP}
+        className="App-logo"
+        alt="logo"
+        onClick={area => clicked(area)}
+      />
     </div>
   );
-}
+};
 
 export default App;
