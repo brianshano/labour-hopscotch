@@ -1,5 +1,11 @@
 @import-normalize;
 
+@font-face {
+  font-family: 'WalterTurncoat-Regular';
+  src: local('WalterTurncoat-Regular'),
+    url(./fonts/WalterTurncoat-Regular.ttf) format('ttf');
+}
+
 body {
   margin: 0;
   font-size: 16px;
@@ -10,6 +16,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'WalterTurncoat-Regular';
+  font-family: 'Walter Turncoat',
+    cursive;
+
 }
 
 code {

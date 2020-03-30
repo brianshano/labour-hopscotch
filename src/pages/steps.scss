@@ -9,6 +9,15 @@
     border: 1px solid white;
     padding: 1rem;
     margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-self: center;
+    align-items: center;
+    // align-content: center;
+    .action-image {
+      width: 8rem;
+    }
   }
   .action-description {
     text-align: justify;
