@@ -6,15 +6,14 @@ import {
   Link
 } from 'react-router-dom';
 // import ReactDOM from 'react-dom';
-import logo from './assets/labour-hopscotch.jpg';
+// import logo from './assets/labour-hopscotch.jpg';
 import Steps from './pages/steps.js';
 import About from './pages/about.js';
 import './App.scss';
 import * as contentful from 'contentful';
-import Swiper from 'react-id-swiper';
+// import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import ImageMapper from 'react-image-mapper';
-import { useHistory } from 'react-router-dom';
+// import ImageMapper from 'react-image-mapper';
 
 const App = () => {
   const [entries, setEntries] = useState([]);
@@ -26,7 +25,7 @@ const App = () => {
       accessToken: 'lidYYf2UG2FiinMVzNMJ3xcJq-4JMZfE5sTLoytxg20'
     });
     client.getEntries().then(entries => {
-      console.log('entries:', entries);
+      console.log('entries:', entries.items);
       setEntries(
         entries.items.filter(item => {
           return item.sys.contentType.sys.id === 'hopscotchSteps';
@@ -75,24 +74,35 @@ const App = () => {
               <Link to="/about">About</Link>
             </div>
           </div>
-          <div className="nav-steps">
-            {/* <Swiper {...params}>
+
+          {/* <div className="hopscotch">
               {entries.map((item, index) => {
                 const linkUrl = '/steps/' + item.fields.urlTitle;
+                let doublerow = true;
+                if (index === 0 || index === 3 || index === 6) {
+                  doublerow = false;
+                }
                 return (
-                  <div className="slide" key={index}>
-                    <Link to={linkUrl} className="slide-link">
-                      <img
-                        src={item.fields.icon.fields.file.url}
-                        className="slide-image"
-                      />
+                  <>
+                    <div
+                      className={
+                        doublerow ? 'doublerow ' + index : 'singlerow ' + index
+                      }
+                    >
+                      <Link to={linkUrl} className="slide-link">
+                        <img
+                          src={item.fields.icon.fields.file.url}
+                          className="slide-image"
+                        />
+                      </Link>
                       <div className="nav-steps-item">{item.fields.title}</div>
-                    </Link>
-                  </div>
+                    </div>
+                    {!doublerow ? <div className="test">test</div> : null}
+                  </>
                 );
               })}
-            </Swiper> */}
-          </div>
+            </div> */}
+          {/* </div> */}
         </header>
 
         <div className="app-body">
@@ -114,72 +124,103 @@ const App = () => {
 };
 
 const Home = () => {
-  let history = useHistory();
   const windowWidth = window.innerWidth;
   console.log('width', windowWidth);
 
-  const URL =
-    'https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_' +
-    windowWidth +
-    '/v1585353002/Labour%20Hopscotch/labour-hopscotch.jpg';
-  const MAP = {
-    name: 'my-map',
-    areas: [
-      {
-        name: 'alternative-therapies',
-        shape: 'rect',
-        coords: [630, 0, 388, 250]
-      },
-      {
-        name: 'birthing-ball',
-        shape: 'rect',
-        coords: [280, 240, 505, 470]
-      },
-      {
-        name: 'mat',
-        shape: 'rect',
-        coords: [505, 240, 740, 470]
-        // preFillColor: 'green',
-        // fillColor: 'blue'
-      },
-      {
-        name: 'water',
-        shape: 'rect',
-        coords: [390, 680, 620, 455]
-      },
-      {
-        name: 'birthing-stool',
-        shape: 'rect',
-        coords: [505, 890, 270, 670]
-      },
-      {
-        name: 'toilet',
-        shape: 'rect',
-        coords: [730, 890, 505, 670]
-      },
-      {
-        name: 'mobilise',
-        shape: 'rect',
-        coords: [390, 890, 620, 1110]
-      }
-    ]
-  };
-  const clicked = area => {
-    console.log('you clicked', area);
-    console.log('you clicked', area.name);
-    history.push('/steps/' + area.name);
-  };
+  // const URL =
+  //   'https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_' +
+  //   windowWidth +
+  //   '/v1585353002/Labour%20Hopscotch/labour-hopscotch.jpg';
 
   return (
     <div className="hopscotch-main-image">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
-      <ImageMapper
-        src={URL}
-        map={MAP}
-        className="App-logo"
-        alt="logo"
-        onClick={area => clicked(area)}
-      />
+      <div className="nav-steps">
+        <div className="hopscotch">
+          {/* <div className="single">{entries.items[0].fields.title}</div> */}
+          <Link to="/steps/alternative-therapies" className="slide-link">
+            <div className="single">
+              <div className="single-image">
+                <img
+                  alt="alternative-therapies"
+                  src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/7-alternative.png"
+                />
+              </div>
+              <div className="hopscotch-name">Alternative Therapies</div>
+            </div>
+          </Link>
+
+          <div className="double">
+            <Link to="/steps/birthing-ball" className="slide-link">
+              <div className="single">
+                <div className="single-image">
+                  <img
+                    alt="birthing-ball"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/6-birthing-ball.png"
+                  />
+                </div>
+                <div className="hopscotch-name">Birthing Ball</div>
+              </div>
+            </Link>
+            <Link to="/steps/mat" className="slide-link">
+              <div className="single">
+                <div className="single-image">
+                  <img
+                    alt="mat"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/5-mat.png"
+                  />
+                </div>
+                <div className="hopscotch-name">Mat</div>
+              </div>
+            </Link>
+          </div>
+          <Link to="/steps/water" className="slide-link">
+            <div className="single">
+              <div className="single-image">
+                <img
+                  alt="water"
+                  src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/4-water.png"
+                />
+              </div>
+              <div className="hopscotch-name">Water</div>
+            </div>
+          </Link>
+          <div className="double">
+            <Link to="/steps/toilet" className="slide-link">
+              <div className="single">
+                <div className="single-image">
+                  <img
+                    alt="toilet"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/3-toilet.png"
+                  />
+                </div>
+                <div className="hopscotch-name">Toilet</div>
+              </div>
+            </Link>
+            <Link to="/steps/stool" className="slide-link">
+              <div className="single">
+                <div className="single-image">
+                  <img
+                    alt="stool"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/2-stool.png"
+                  />
+                </div>
+                <div className="hopscotch-name">Stool</div>
+              </div>
+            </Link>
+          </div>
+          <Link to="/steps/mobilise" className="slide-link">
+            <div className="single">
+              <div className="single-image">
+                <img
+                  alt="mobilise"
+                  src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/1-mobilise.png"
+                />
+              </div>
+              <div className="hopscotch-name">Mobilise</div>
+            </div>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

@@ -25,7 +25,7 @@ const Steps = location => {
   let { id } = useParams();
   const steps = stepList.steps;
 
-  console.log('entries', entries);
+  console.log('step entries', entries);
 
   return (
     <>
@@ -41,7 +41,15 @@ const Steps = location => {
 
           return (
             <>
-              <div className="action">{entry.fields.title}</div>
+              <div className="action">
+                <img
+                  src={entry.fields.icon.fields.file.url}
+                  className="action-image"
+                  alt={entry.fields.title}
+                />
+                {entry.fields.title}
+              </div>
+
               <div className="action-description">
                 {entry.fields.description.content.map(content => {
                   return <p>{content.content[0].value}</p>;
