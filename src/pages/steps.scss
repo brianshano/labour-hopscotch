@@ -6,15 +6,13 @@
   margin: 1rem;
   .action {
     min-width: 10rem;
-    border: 1px solid white;
+    border: 3px solid #ffffff14;
     padding: 1rem;
     margin: 0.5rem;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    // align-self: center;
     align-items: center;
-    // align-content: center;
     .action-image {
       width: 8rem;
     }
@@ -23,5 +21,7 @@
     text-align: justify;
     max-width: 800px;
     padding: 0 1rem;
+    background: #ffffff14;
+    margin: 0 1rem;
   }
 }

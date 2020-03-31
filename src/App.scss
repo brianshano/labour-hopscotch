@@ -66,12 +66,15 @@ a:visited {
   color: #b9c4bc;
 }
 
-.nav-top {
+.footer {
   display: flex;
-
-  .nav-top-item {
-    padding: 0.5rem;
-    padding-top: 0;
+  justify-content: center;
+  background: #ffffff14;
+  margin-top: 2rem;
+  .footer-item {
+    padding: 1rem;
+    
+    
 
     a {
       text-decoration: none;
@@ -154,34 +157,57 @@ div.slide {
   &>img {
     width: calc(100vw-0.5rem);
     // width: 100vw;
-    max-width: 1024px;
+    // max-width: 1024px;
   }
 
 
-.double {
-  // border: 1px solid red;
-  display: flex;
-  justify-content: center;
-  
-}
+
 
 .single {
-  border: 2px solid white;
-  border-bottom: 1px solid white;
+display: flex;
+justify-content: center;
+flex-direction: column;
+  border: 2px solid #ffffff74;
+  border-bottom: 1px solid #ffffff74;
   // width: 33vw;
-  max-width: 14rem;
   margin: 0 auto;
   padding: 1rem;
   font-size: 18px;
   // font-family: 'WalterTurncoat-Regular';
   font-family: 'Walter Turncoat',
   cursive;
-  a {  
+
+  a {
     text-decoration: none;
+  }
+
+  width: 7rem;
+  height: 9rem;
+  @media (min-width: 375px) {
+    width: 100%;
+    height: 100%;
+    max-width: 10rem;
+    max-height: 11rem;
+  }
+  @media (min-width: 480px) {
+    width: 100%;
+    height: 100%;
+    max-width: 12rem;
+    max-height: 14rem;
+  }
+}
+.double {
+  display: flex;
+  justify-content: center;
+
+  .single {
+    max-width: 9rem;
+    @media (min-width: 480px) {
+      max-width: 12rem;
+    }
   }
 }
 .single-image > img{
-  // width: 180px;
   width: 33vw;
   max-width: 180px;
 }
@@ -190,16 +216,12 @@ div.slide {
     text-decoration: none;
     color: white;
     display: flex;
-    flex-direction: column;
     height: 100%;
-    // border: 1px solid green;
-    justify-content: space-between;
-    align-self: center;
-    align-items: center;
   }
   
 
   .hopscotch-name {
     max-width: fit-content;
+    font-weight: bold;
   }
 }
