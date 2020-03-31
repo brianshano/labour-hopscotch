@@ -69,35 +69,6 @@ const App = () => {
               />
             </Link>
           </div>
-
-          {/* <div className="hopscotch">
-              {entries.map((item, index) => {
-                const linkUrl = '/steps/' + item.fields.urlTitle;
-                let doublerow = true;
-                if (index === 0 || index === 3 || index === 6) {
-                  doublerow = false;
-                }
-                return (
-                  <>
-                    <div
-                      className={
-                        doublerow ? 'doublerow ' + index : 'singlerow ' + index
-                      }
-                    >
-                      <Link to={linkUrl} className="slide-link">
-                        <img
-                          src={item.fields.icon.fields.file.url}
-                          className="slide-image"
-                        />
-                      </Link>
-                      <div className="nav-steps-item">{item.fields.title}</div>
-                    </div>
-                    {!doublerow ? <div className="test">test</div> : null}
-                  </>
-                );
-              })}
-            </div> */}
-          {/* </div> */}
         </header>
 
         <div className="app-body">
@@ -138,7 +109,7 @@ const Home = () => {
                 <div className="single-image">
                   <img
                     alt="alternative-therapies"
-                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/7-alternative.png"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/7-alternative.png"
                   />
                 </div>
                 <div className="hopscotch-name">Alternative Therapies</div>
@@ -151,7 +122,7 @@ const Home = () => {
                   <div className="single-image">
                     <img
                       alt="birthing-ball"
-                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/6-birthing-ball.png"
+                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/6-birthing-ball.png"
                     />
                   </div>
                   <div className="hopscotch-name">Birthing Ball</div>
@@ -162,7 +133,7 @@ const Home = () => {
                   <div className="single-image">
                     <img
                       alt="mat"
-                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/5-mat.png"
+                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/5-mat.png"
                     />
                   </div>
                   <div className="hopscotch-name">Mat</div>
@@ -174,7 +145,7 @@ const Home = () => {
                 <div className="single-image">
                   <img
                     alt="water"
-                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/4-water.png"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/4-water.png"
                   />
                 </div>
                 <div className="hopscotch-name">Water</div>
@@ -186,7 +157,7 @@ const Home = () => {
                   <div className="single-image">
                     <img
                       alt="toilet"
-                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/3-toilet.png"
+                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/3-toilet.png"
                     />
                   </div>
                   <div className="hopscotch-name">Toilet</div>
@@ -197,7 +168,7 @@ const Home = () => {
                   <div className="single-image">
                     <img
                       alt="birthing stool"
-                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/2-stool.png"
+                      src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/2-stool.png"
                     />
                   </div>
                   <div className="hopscotch-name">Birthing Stool</div>
@@ -209,7 +180,7 @@ const Home = () => {
                 <div className="single-image">
                   <img
                     alt="mobilise"
-                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_330/v1585310801/Labour%20Hopscotch/stepicons/1-mobilise.png"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_180/v1585310801/Labour%20Hopscotch/stepicons/1-mobilise.png"
                   />
                 </div>
                 <div className="hopscotch-name">Mobilise</div>
