@@ -24,7 +24,7 @@ const Steps = location => {
   }, [window.location.pathname]);
   let { id } = useParams();
   const steps = stepList.steps;
-
+  let count = 0;
   console.log('step entries', entries);
 
   return (
@@ -51,8 +51,19 @@ const Steps = location => {
               </div>
 
               <div className="action-description">
-                {entry.fields.description.content.map(content => {
-                  return <p>{content.content[0].value}</p>;
+                {entry.fields.description.content.map((content, index) => {
+                  const type = content.nodeType;
+                  if (type === 'paragraph') {
+                    return <p>{content.content[0].value}</p>;
+                  } else if (type === 'unordered-list') {
+                    return content.content.map(c => {
+                      return (
+                        <div className="list-item">
+                          {c.content[0].content[0].value}
+                        </div>
+                      );
+                    });
+                  }
                 })}
               </div>
             </>
