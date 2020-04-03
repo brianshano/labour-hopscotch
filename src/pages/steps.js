@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import './steps.scss';
-import stepList from '../steps.json';
 import * as contentful from 'contentful';
 
 const Steps = location => {
@@ -21,24 +19,13 @@ const Steps = location => {
         })
       );
     });
-  }, [window.location.pathname]);
-  let { id } = useParams();
-  const steps = stepList.steps;
-  let count = 0;
-  console.log('step entries', entries);
+  }, []);
 
   return (
     <>
       <div className="steps-container">{/* <Renderer id={id} /> */}</div>
       <div className="actions-container">
         {entries.map(entry => {
-          console.log(
-            'content',
-            entry.fields.description.content.map(content => {
-              return content.content[0].value;
-            })
-          );
-
           return (
             <>
               <div className="action">
