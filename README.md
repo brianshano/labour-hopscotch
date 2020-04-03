@@ -2,6 +2,10 @@
 
 [https://labourhopscotch.netlify.com/](https://labourhopscotch.netlify.com/)
 
+![Labour Hopscotch](https://res.cloudinary.com/bshano/image/upload/v1585908558/Labour%20Hopscotch/labour-hopscotch-open-graph-template.png)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
