@@ -1,72 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   BrowserRouter as HashRouter,
   Switch,
   Route,
   Link
 } from 'react-router-dom';
-// import ReactDOM from 'react-dom';
-// import logo from './assets/labour-hopscotch.jpg';
 import Steps from './pages/steps.js';
 import About from './pages/about.js';
 import './App.scss';
-import * as contentful from 'contentful';
-// import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.css';
-// import ImageMapper from 'react-image-mapper';
 
 const App = () => {
-  const [entries, setEntries] = useState([]);
-  useEffect(() => {
-    console.log('ineeeer');
-
-    const client = contentful.createClient({
-      space: '3mvtf9hx44sd',
-      accessToken: 'lidYYf2UG2FiinMVzNMJ3xcJq-4JMZfE5sTLoytxg20'
-    });
-    client.getEntries().then(entries => {
-      console.log('entries:', entries.items);
-      setEntries(
-        entries.items.filter(item => {
-          return item.sys.contentType.sys.id === 'hopscotchSteps';
-        })
-      );
-      // const slideEntries = entries.
-      entries.items.forEach(entry => {
-        if (entry.fields.title) {
-          console.log(entry.fields.title);
-        }
-      });
-    });
-  }, []);
-  const params = {
-    // slidesPerView: 6,
-    spaceBetween: 20,
-    slidesPerView: 'auto',
-    keyboard: {
-      enabled: true,
-      onlyInViewport: false
-    },
-    mousewheel: {
-      invert: true
-    },
-    hashNavigation: {
-      replaceState: true
-    },
-    centeredSlides: true,
-    grabCursor: true
-  };
-
   return (
     <HashRouter>
       <div className="App">
         <header className="App-header">
           <div className="header">
             <Link to="/">
-              <img
-                src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
-                className="header-logo"
-              />
+              <div class="stage">
+                <div class="box bounce-7">
+                  <img
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
+                    className="header-logo"
+                    alt="Labour Hopscotch"
+                  />
+                </div>
+              </div>
             </Link>
           </div>
         </header>
@@ -142,6 +100,12 @@ const Home = () => {
             </div>
             <Link to="/steps/water" className="slide-link">
               <div className="single">
+                <div className="babysteps">
+                  <img
+                    alt="baby steps"
+                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_54/v1585906726/Labour%20Hopscotch/footsteps.png"
+                  />
+                </div>
                 <div className="single-image">
                   <img
                     alt="water"

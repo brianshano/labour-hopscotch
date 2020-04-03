@@ -19,10 +19,13 @@
   }
   .action-description {
     text-align: justify;
-    max-width: 800px;
+    max-width: 600px;
     padding: 0 1rem;
     background: #ffffff14;
-    margin: 0 1rem;
+    @media (min-width: 425px) {
+      margin: 0 1rem;
+    }
+
   }
 }
 
