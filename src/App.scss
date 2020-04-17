@@ -25,12 +25,9 @@
   font-size: calc(10px + 2vmin);
 
   .header {
-    background-color: #2d373d;
-    border-bottom: 1px solid #444;
+    background-color: #4e616f;
     width: 100vw;
     padding: 1rem 0;
-    margin-bottom: 0.5rem;
-    // display: flex;
 
     a {
       text-decoration: none;
@@ -115,7 +112,6 @@ a:visited {
 .footer {
   display: flex;
   justify-content: center;
-  background: #ffffff14;
   margin-top: 2rem;
 
   .footer-item {

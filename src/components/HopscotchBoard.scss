@@ -1,0 +1,154 @@
+.hopscotch-board {
+  width: 100%;
+  background-color: #748a96;
+  padding-top: 1rem;
+}
+
+
+.hopscotch {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  align-items: center;
+  width: 100%;
+  min-width: 220px;
+  max-width: 1000px;
+
+}
+
+.hopscotch-row {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -2rem;
+}
+
+.row-left {
+  position: relative;
+  right: -1rem;
+}
+
+.row-right {
+  position: relative;
+  left: -1rem;
+}
+
+.hopscotch>div>img,
+.hopscotch>div>a>img,
+.hopscotch>.hopscotch-row>div>img,
+.hopscotch>.hopscotch-row>a>div>img,
+.hopscotch>.hopscotch-row>div>a>img {
+  width: auto;
+  max-width: 12rem;
+}
+
+.row-3 {
+  position: relative;
+  top: -4rem;
+}
+
+.row-4 {
+  position: relative;
+  top: -5.8rem;
+}
+
+.row-5 {
+  position: relative;
+  top: -7.7rem;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .hopscotch>div>img,
+  .hopscotch>div>a>img,
+  .hopscotch>.hopscotch-row>div>img,
+  .hopscotch>.hopscotch-row>a>div>img,
+  .hopscotch>.hopscotch-row>div>a>img {
+    width: auto;
+    max-width: 10rem;
+  }
+
+  .hopscotch-row {
+    top: calc(-100vw * 0.025);
+  }
+
+  .row-3 {
+    top: calc(-100vw * 0.048);
+  }
+
+  .row-4 {
+    top: calc(-100vw * 0.074);
+  }
+
+  .row-5 {
+    top: calc(-100vw * 0.10);
+  }
+
+  .row-left {
+    position: relative;
+    right: calc(-100vw * 0.010);
+  }
+
+  .row-right {
+    position: relative;
+    left: calc(-100vw * 0.010);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .hopscotch-row {
+    top: calc(-100vw * 0.035);
+  }
+
+  .row-3 {
+    top: calc(-100vw * 0.076);
+  }
+
+  .row-4 {
+    top: calc(-100vw * 0.11);
+  }
+
+  .row-5 {
+    top: calc(-100vw * 0.143);
+  }
+
+  .row-left {
+    position: relative;
+    right: calc(-100vw * 0.015);
+  }
+
+  .row-right {
+    position: relative;
+    left: calc(-100vw * 0.015);
+  }
+}
+
+@media only screen and (max-width: 568px) {
+
+  .hopscotch>div>img,
+  .hopscotch>div>a>img,
+  .hopscotch>.hopscotch-row>div>img,
+  .hopscotch>.hopscotch-row>a>div>img,
+  .hopscotch>.hopscotch-row>div>a>img {
+    width: auto;
+    max-width: 40vw;
+  }
+
+  .hopscotch-row {
+    top: calc(-100vw * 0.06);
+  }
+
+  .row-3 {
+    top: calc(-100vw * 0.12);
+  }
+
+  .row-4 {
+    top: calc(-100vw * 0.18);
+  }
+
+  .row-5 {
+    top: calc(-100vw * 0.24);
+  }
+}
