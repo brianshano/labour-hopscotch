@@ -4,8 +4,8 @@ import './HopscotchBoard.scss';
 
 const HopscotchBoard = () => {
   return (
-    <div class="hopscotch-board">
-      <section class="hopscotch">
+    <div className="hopscotch-board">
+      <section className="hopscotch">
         <div className="row-1">
           <Link to="/steps/alternative-therapies" className="slide-link">
             <img

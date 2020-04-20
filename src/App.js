@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as HashRouter,
   Switch,
@@ -9,27 +9,51 @@ import Steps from './pages/steps.js';
 import About from './pages/about.js';
 import HopscotchBoard from './components/HopscotchBoard';
 import './App.scss';
-
+import ReactPlayer from 'react-player';
+// import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+// Modal.setAppElement('#main');
+// appElement={document.getElementById("hereIsYourRootElementId")}
 const App = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <HashRouter>
-      <div className="App">
+      <div className="App" id="main">
         <header className="App-header">
           <div className="header">
-            <Link to="/">
-              <div class="stage">
-                <div class="box bounce-7">
+            <Link to="/" title="Labour hopscotch">
+              <div className="stage">
+                <div className="box bounce-7">
                   <img
                     src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
                     className="header-logo"
                     alt="Labour Hopscotch"
+                    title="Labour hopscotch"
                   />
                 </div>
               </div>
             </Link>
           </div>
         </header>
+        <div className="video-modal">
+          {/* <div className="video-modal"> */}
+          <Modal
+            isOpen={showModal}
+            contentLabel="onRequestClose Example"
+            onRequestClose={() => setShowModal(!showModal)}
+            shouldCloseOnOverlayClick={true}
+            className="nodal"
+            appElement={document.getElementById('main')}
+          >
+            <ReactPlayer url="https://vimeo.com/406108027" controls />
+            <button onClick={() => setShowModal(false)}>X Close Video</button>
+          </Modal>
 
+          <button type="button" onClick={() => setShowModal(!showModal)}>
+            Watch the video
+          </button>
+          {/* )} */}
+        </div>
         <div className="app-body">
           <Switch>
             <Route exact path="/">
@@ -39,7 +63,8 @@ const App = () => {
               <About />
             </Route>
             <Route path="/steps/:id">
-              <Steps />
+              <Route component={Steps} />
+              {/* <Steps /> */}
             </Route>
           </Switch>
         </div>
