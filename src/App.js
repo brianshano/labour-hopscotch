@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as HashRouter,
   Switch,
@@ -10,10 +10,7 @@ import About from './pages/about.js';
 import HopscotchBoard from './components/HopscotchBoard';
 import './App.scss';
 import ReactPlayer from 'react-player';
-// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-// Modal.setAppElement('#main');
-// appElement={document.getElementById("hereIsYourRootElementId")}
 const App = () => {
   const [showModal, setShowModal] = useState(false);
   return (
@@ -49,8 +46,13 @@ const App = () => {
             <button onClick={() => setShowModal(false)}>X Close Video</button>
           </Modal>
 
-          <button type="button" onClick={() => setShowModal(!showModal)}>
-            Watch the video
+          <button
+            type="button"
+            class="vid-button"
+            onClick={() => setShowModal(!showModal)}
+          >
+            <div>Watch Video &nbsp;</div>
+            <img src="https://res.cloudinary.com/bshano/image/upload/v1587391337/Labour%20Hopscotch/video-white.svg" />
           </button>
           {/* )} */}
         </div>
@@ -74,14 +76,7 @@ const App = () => {
 };
 
 const Home = () => {
-  const windowWidth = window.innerWidth;
-  console.log('width', windowWidth);
-
-  // const URL =
-  //   'https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_' +
-  //   windowWidth +
-  //   '/v1585353002/Labour%20Hopscotch/labour-hopscotch.jpg';
-
+  // const windowWidth = window.innerWidth;
   return (
     <>
       <HopscotchBoard />

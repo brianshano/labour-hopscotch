@@ -5,14 +5,12 @@ const About = () => {
   const [articleTitle, setArticleTitle] = useState('');
   const [articleContent, setArticleContent] = useState([]);
   useEffect(() => {
-    console.log('ineeeer');
-
     const client = contentful.createClient({
       space: '3mvtf9hx44sd',
-      accessToken: 'lidYYf2UG2FiinMVzNMJ3xcJq-4JMZfE5sTLoytxg20'
+      accessToken: 'lidYYf2UG2FiinMVzNMJ3xcJq-4JMZfE5sTLoytxg20',
     });
-    client.getEntries().then(entries => {
-      entries.items.forEach(entry => {
+    client.getEntries().then((entries) => {
+      entries.items.forEach((entry) => {
         if (entry.sys.contentType.sys.id === 'article') {
           setArticleTitle(entry.fields.title);
           setArticleContent(entry.fields.content.content);
