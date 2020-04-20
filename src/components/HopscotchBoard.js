@@ -5,8 +5,8 @@ import './HopscotchBoard.scss';
 const HopscotchBoard = () => {
   return (
     <div className="hopscotch-board">
-      <section className="hopscotch">
-        <div className="row-1">
+      <section className="hopscotch stage">
+        <div className="row-1  vibrate-1">
           <Link to="/steps/alternative-therapies" className="slide-link">
             <img
               src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121503/Labour%20Hopscotch/stepicons-eps/7-alternative-therapies.png"
@@ -15,7 +15,7 @@ const HopscotchBoard = () => {
           </Link>
         </div>
         <div className="hopscotch-row row-2">
-          <div className="row-left">
+          <div className="row-left vibrate-2">
             <Link to="/steps/birthing-ball" className="slide-link">
               <img
                 src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121502/Labour%20Hopscotch/stepicons-eps/6-birthing-ball.png"
@@ -23,7 +23,7 @@ const HopscotchBoard = () => {
               />
             </Link>
           </div>
-          <div className="row-right">
+          <div className="row-right vibrate-3">
             <Link to="/steps/mat" className="slide-link">
               <img
                 src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121502/Labour%20Hopscotch/stepicons-eps/5-mat.png"
@@ -32,7 +32,7 @@ const HopscotchBoard = () => {
             </Link>
           </div>
         </div>
-        <div className="row-3">
+        <div className="row-3 vibrate-1">
           <Link to="/steps/water" className="slide-link">
             <img
               src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121502/Labour%20Hopscotch/stepicons-eps/4-water.png"
@@ -41,7 +41,7 @@ const HopscotchBoard = () => {
           </Link>
         </div>
         <div className="hopscotch-row row-4">
-          <div className="row-left">
+          <div className="row-left vibrate-2">
             <Link to="/steps/toilet" className="slide-link">
               <img
                 src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121502/Labour%20Hopscotch/stepicons-eps/3-toilet.png"
@@ -49,7 +49,7 @@ const HopscotchBoard = () => {
               />
             </Link>
           </div>
-          <div className="row-right">
+          <div className="row-right vibrate-3">
             <Link to="/steps/birthing-stool" className="slide-link">
               <img
                 src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121502/Labour%20Hopscotch/stepicons-eps/2-stool.png"
@@ -58,7 +58,7 @@ const HopscotchBoard = () => {
             </Link>
           </div>
         </div>
-        <div className="row-5">
+        <div className="row-5 vibrate-1">
           <Link to="/steps/mobilise" className="slide-link">
             <img
               src="https://res.cloudinary.com/bshano/image/upload/f_auto,q_auto/v1587121502/Labour%20Hopscotch/stepicons-eps/1-mobilise.png"

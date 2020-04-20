@@ -19,16 +19,16 @@ const App = () => {
         <header className="App-header">
           <div className="header">
             <Link to="/" title="Labour hopscotch">
-              <div className="stage">
-                <div className="box bounce-7">
-                  <img
-                    src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
-                    className="header-logo"
-                    alt="Labour Hopscotch"
-                    title="Labour hopscotch"
-                  />
-                </div>
-              </div>
+              {/* <div className="stage"> */}
+              {/* <div className="box bounce-7"> */}
+              <img
+                src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
+                className="header-logo"
+                alt="Labour Hopscotch"
+                title="Labour hopscotch"
+              />
+              {/* </div> */}
+              {/* </div> */}
             </Link>
           </div>
         </header>
@@ -52,7 +52,10 @@ const App = () => {
             onClick={() => setShowModal(!showModal)}
           >
             <div>Watch Video &nbsp;</div>
-            <img src="https://res.cloudinary.com/bshano/image/upload/v1587391337/Labour%20Hopscotch/video-white.svg" />
+            <img
+              alt="video link"
+              src="https://res.cloudinary.com/bshano/image/upload/v1587391337/Labour%20Hopscotch/video-white.svg"
+            />
           </button>
           {/* )} */}
         </div>

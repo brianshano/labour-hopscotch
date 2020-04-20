@@ -21,6 +21,12 @@ const About = () => {
   return (
     <div className="about-container">
       <p className="about-title">{articleTitle}</p>
+      <div className="about-image">
+        <img
+          alt="Sinead Thompson"
+          src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,r_123,w_246/v1587394513/Labour%20Hopscotch/sinead-thompson.jpg"
+        ></img>
+      </div>
       {articleContent.map((content, index) => {
         console.log('content', content);
 

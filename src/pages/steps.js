@@ -49,7 +49,11 @@ const Steps = (location) => {
       <Link to={link} className="slide-link">
         <div className="action-navigation-set">
           <div>{'<<'}</div>
-          <img src={prevEntry.fields.imageurl} className="small-step-image" />
+          <img
+            alt={prevEntry.fields.title}
+            src={prevEntry.fields.imageurl}
+            className="small-step-image"
+          />
           <div>{prevEntry.fields.title}</div>
         </div>
       </Link>
@@ -61,7 +65,11 @@ const Steps = (location) => {
       <Link to={link} className="slide-link">
         <div className="action-navigation-set">
           <div>{nextEntry.fields.title}</div>
-          <img src={nextEntry.fields.imageurl} className="small-step-image" />
+          <img
+            alt={nextEntry.fields.title}
+            src={nextEntry.fields.imageurl}
+            className="small-step-image"
+          />
           <div>{'>>'}</div>
         </div>
       </Link>
@@ -90,6 +98,7 @@ const Steps = (location) => {
                 <img
                   class="action-footsteps"
                   src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_46/v1585906726/Labour%20Hopscotch/footsteps.png"
+                  alt="baby footprints"
                 />
               </div>
 

@@ -152,6 +152,11 @@ a:visited {
   .about-title {
     font-weight: bold;
   }
+  .about-image {
+    img {
+      max-width: 8rem;
+    }
+  }
 }
 
 div.slide {
@@ -335,4 +340,129 @@ button.vid-button {
   color: white;
   background-color: transparent;
   font-family: 'Walter Turncoat', cursive;
+}
+.hopscotch {
+  a > img {
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    animation-name: bounce-3;
+    animation-timing-function: cubic-bezier(0.18, 0.14, 0.12, 1);
+  }
+  a:hover > img {
+    background-color: #ffffff11;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation vibrate-2
+ * ----------------------------------------
+ */
+.vibrate-2 {
+  animation: vibrate-2 0.2s ease-in 0.2s 6 alternate both;
+}
+@keyframes vibrate-2 {
+  0% {
+    transform: translate(0);
+  }
+
+  // 20% {
+  //   transform: translate(2px, -2px);
+  // }
+
+  40% {
+    transform: translate(2px, 2px);
+  }
+
+  // 60% {
+  //   transform: translate(-2px, 2px);
+  // }
+
+  80% {
+    transform: translate(-2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+.vibrate-1 {
+  animation: vibrate-1 0.2s ease-out 0.2s 6 reverse both;
+}
+
+@keyframes vibrate-1 {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+  }
+
+  // 40% {
+  //   transform: translate(-2px, -2px);
+  // }
+
+  60% {
+    transform: translate(2px, 2px);
+  }
+
+  // 80% {
+  //   transform: translate(2px, -2px);
+  // }
+
+  100% {
+    transform: translate(0);
+  }
+}
+.vibrate-3 {
+  animation: vibrate-3 0.2s linear 0.2s 6 both;
+}
+
+@keyframes vibrate-3 {
+  0% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-2px, -2px);
+  }
+
+  // 20% {
+  //   transform: translate(2px, -2px);
+  // }
+
+  30% {
+    transform: translate(-2px, 2px);
+  }
+
+  // 40% {
+  //   transform: translate(2px, 2px);
+  // }
+
+  // 50% {
+  //   transform: translate(-2px, -2px);
+  // }
+
+  // 60% {
+  //   transform: translate(2px, -2px);
+  // }
+
+  70% {
+    transform: translate(-2px, 2px);
+  }
+
+  // 80% {
+  //   transform: translate(-2px, -2px);
+  // }
+
+  90% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
 }
