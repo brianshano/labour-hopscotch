@@ -7,8 +7,14 @@
   .action {
     min-width: 10rem;
     margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .action-image {
       width: 10rem;
+    }
+    .action-footsteps {
+      width: 46px;
     }
   }
   .action-description {
