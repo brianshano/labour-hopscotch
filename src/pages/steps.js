@@ -49,12 +49,14 @@ const Steps = (location) => {
       <Link to={link} className="slide-link">
         <div className="action-navigation-set">
           <div>{'<<'}</div>
-          <img
-            alt={prevEntry.fields.title}
-            src={prevEntry.fields.imageurl}
-            className="small-step-image"
-          />
-          <div>{prevEntry.fields.title}</div>
+          <div className="action-navigation-subset left">
+            <img
+              alt={prevEntry.fields.title}
+              src={prevEntry.fields.imageurl}
+              className="small-step-image"
+            />
+            <div>{prevEntry.fields.title}</div>
+          </div>
         </div>
       </Link>
     );
@@ -64,12 +66,14 @@ const Steps = (location) => {
     return (
       <Link to={link} className="slide-link">
         <div className="action-navigation-set">
-          <div>{nextEntry.fields.title}</div>
-          <img
-            alt={nextEntry.fields.title}
-            src={nextEntry.fields.imageurl}
-            className="small-step-image"
-          />
+          <div className="action-navigation-subset right">
+            <img
+              alt={nextEntry.fields.title}
+              src={nextEntry.fields.imageurl}
+              className="small-step-image"
+            />
+            <div>{nextEntry.fields.title}</div>
+          </div>
           <div>{'>>'}</div>
         </div>
       </Link>

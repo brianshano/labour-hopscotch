@@ -65,6 +65,13 @@ const HopscotchBoard = () => {
               alt="mobilse"
             />
           </Link>
+          <img
+            src="https://res.cloudinary.com/bshano/image/upload/v1587680159/Labour%20Hopscotch/footprints-both.svg"
+            className="hopscotch-steps"
+            alt="Labour Hopscotch"
+            title="Labour hopscotch"
+            width="60"
+          />
         </div>
       </section>
     </div>

@@ -22,10 +22,17 @@ const App = () => {
               {/* <div className="stage"> */}
               {/* <div className="box bounce-7"> */}
               <img
-                src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_480/v1585318095/Labour%20Hopscotch/labour-hopscotch-logo-trans.png"
+                src="https://res.cloudinary.com/bshano/image/upload/c_scale,f_auto,w_765/v1587679212/Labour%20Hopscotch/hopscotch-banner.png"
                 className="header-logo"
                 alt="Labour Hopscotch"
                 title="Labour hopscotch"
+              />
+              <img
+                src="https://res.cloudinary.com/bshano/image/upload/v1587680159/Labour%20Hopscotch/footprints-both.svg"
+                className="header-logo-steps"
+                alt="Labour Hopscotch"
+                title="Labour hopscotch"
+                width="60"
               />
               {/* </div> */}
               {/* </div> */}
