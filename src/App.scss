@@ -27,11 +27,15 @@
   .header {
     background-color: #4e616f;
     width: 100vw;
-    padding: 1rem 0;
+    padding-top: 1rem;
 
     a {
       text-decoration: none;
       // color: #444;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
     }
 
     .header-logo {
@@ -41,8 +45,16 @@
       margin: 0 auto;
     }
 
-    stage {
+    .header-logo-steps {
+      width: 100%;
+      max-width: 60px;
+      // max-width: 30rem;
+      align-self: center;
+      top: -1rem;
+      position: relative;
     }
+
+    stage {}
 
     .box {
       align-self: flex-end;
@@ -152,6 +164,7 @@ a:visited {
   .about-title {
     font-weight: bold;
   }
+
   .about-image {
     img {
       max-width: 8rem;
@@ -203,7 +216,7 @@ div.slide {
     max-width: 1024px;
   }
 
-  & > img {
+  &>img {
     width: calc(100vw-0.5rem);
     // width: 100vw;
     // max-width: 1024px;
@@ -250,11 +263,10 @@ div.slide {
     display: flex;
     justify-content: center;
 
-    .single {
-    }
+    .single {}
   }
 
-  .single-image > img {
+  .single-image>img {
     width: 80px;
     max-width: 130px;
 
@@ -305,6 +317,14 @@ div.slide {
 .video-modal {
   z-index: 99;
   background-color: transparent;
+  position: absolute;
+  right: 0;
+  max-width: 6rem;
+
+  @media (min-width: 530px) {
+    max-width: 10rem;
+    padding: .5rem;
+  }
 }
 
 .ReactModal__Content {
@@ -312,15 +332,18 @@ div.slide {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  & > div {
+
+  &>div {
     width: 100%;
     height: 100%;
   }
 }
+
 .ReactModal_Overlay {
   display: flex;
   justify-content: center;
 }
+
 button {
   padding: 0.5rem;
   border: 1px solid white;
@@ -332,17 +355,28 @@ button {
 
 button.vid-button {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0 auto;
   padding: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.068);
+  border: 1px solid rgba(255, 255, 255, 0.31);
   color: white;
-  background-color: transparent;
+  background-color: #ffffff17;
   font-family: 'Walter Turncoat', cursive;
+  font-size: 1rem;
+
+  @media (min-width: 530px) {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+
+  }
+
 }
+
 .hopscotch {
-  a > img {
+  a>img {
     animation-duration: 2s;
     animation-iteration-count: 2;
     margin: 0 auto 0 auto;
@@ -350,7 +384,8 @@ button.vid-button {
     animation-name: bounce-3;
     animation-timing-function: cubic-bezier(0.18, 0.14, 0.12, 1);
   }
-  a:hover > img {
+
+  a:hover>img {
     background-color: #ffffff11;
   }
 }
@@ -363,6 +398,7 @@ button.vid-button {
 .vibrate-2 {
   animation: vibrate-2 0.2s ease-in 0.2s 6 alternate both;
 }
+
 @keyframes vibrate-2 {
   0% {
     transform: translate(0);
@@ -388,6 +424,7 @@ button.vid-button {
     transform: translate(0);
   }
 }
+
 .vibrate-1 {
   animation: vibrate-1 0.2s ease-out 0.2s 6 reverse both;
 }
@@ -417,6 +454,7 @@ button.vid-button {
     transform: translate(0);
   }
 }
+
 .vibrate-3 {
   animation: vibrate-3 0.2s linear 0.2s 6 both;
 }

@@ -43,7 +43,12 @@
   width: auto;
   max-width: 12rem;
 }
-
+.hopscotch>div>img.hopscotch-steps {
+  display: block;
+  width: 100%;
+  max-width: 60px;
+  margin: 0 auto;
+}
 .row-3 {
   position: relative;
   top: -4rem;
@@ -152,3 +157,4 @@
     top: calc(-100vw * 0.24);
   }
 }
+
